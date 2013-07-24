@@ -183,10 +183,10 @@ public class DataBaseHelper extends SQLiteOpenHelper{
                 
                 String folderName = dao.getGod_Name().replace(' ','_');
                 
-                dao.setMarker_Image("www/gods/"+folderName.toLowerCase().toLowerCase()+"/"+dao.getMarker_Image()+".png");
+                dao.setMarker_Image("www/gods/"+folderName.toLowerCase().toLowerCase()+"/"+dao.getMarker_Image()+".gif");
                 dao.setMain_Image("www/gods/"+folderName.toLowerCase().toLowerCase()+"/"+dao.getMain_Image()+".jpg");
-                dao.setSummary("www/gods/"+folderName.toLowerCase()+"/"+dao.getSummary());
-                dao.setSymbology("www/gods/"+folderName.toLowerCase()+"/"+dao.getSymbology());
+                dao.setSummary("www/gods/"+folderName.toLowerCase()+"/"+dao.getSummary()+".html");
+                dao.setSymbology("www/gods/"+folderName.toLowerCase()+"/"+dao.getSymbology()+".html");
                
                 
                 NameList.add(dao);

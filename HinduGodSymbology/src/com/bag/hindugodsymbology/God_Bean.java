@@ -1,6 +1,9 @@
 package com.bag.hindugodsymbology;
 
-public class God_Bean {
+import android.os.Parcel;
+import android.os.Parcelable;
+
+public class God_Bean implements Parcelable {
 
 	String _id;
 	String God_Name;
@@ -66,5 +69,42 @@ public class God_Bean {
 	public void setMain_Image(String main_Image) {
 		Main_Image = main_Image;
 	}
-	
+
+
+	// Parcelling part
+	public God_Bean(Parcel in){
+		String[] data = new String[7];
+
+		in.readStringArray(data);
+		this.Marker_Image = data[0];
+		this.Main_Image = data[1];
+		this.Summary = data[2];
+		this.Symbology = data[3];
+		this._id = data[4];
+		this.God_Name = data[5];
+		this.Classification = data[6];
+		
+	}
+
+	@Override
+	public int describeContents(){
+		return 0;
+	}
+
+	@Override
+	public void writeToParcel(Parcel dest, int flags) {
+		dest.writeStringArray(new String[] {this.Marker_Image,this.Main_Image, this.Summary, this.Symbology, this._id, this.God_Name, this.Classification});
+	}
+	public static final Parcelable.Creator CREATOR = new Parcelable.Creator() {
+		public God_Bean createFromParcel(Parcel in) {
+			return new God_Bean(in); 
+		}
+
+		public God_Bean[] newArray(int size) {
+			return new God_Bean[size];
+		}
+
+	};
 }
+
+

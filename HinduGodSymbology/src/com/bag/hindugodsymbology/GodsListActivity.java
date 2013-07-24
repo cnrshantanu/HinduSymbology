@@ -5,25 +5,28 @@ import java.util.ArrayList;
 import java.util.List;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.database.SQLException;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.os.Parcel;
+import android.os.Parcelable;
+import android.provider.SyncStateContract.Constants;
 import android.util.Log;
 import android.view.Gravity;
 import android.view.Menu;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
+import android.widget.EditText;
 import android.widget.ListView;
-import android.widget.TextView;
 import android.widget.Toast;
+
+
 
 public class GodsListActivity extends Activity implements OnItemClickListener {
 
-
-
-
-	ListView listView;
+		ListView listView;
 	List<God_Bean> rowItems;
 
 
@@ -107,6 +110,28 @@ public class GodsListActivity extends Activity implements OnItemClickListener {
 				Toast.LENGTH_SHORT);
 		toast.setGravity(Gravity.BOTTOM | Gravity.CENTER_HORIZONTAL, 0, 0);
 		toast.show();
+		Class ourClass;
+		try
+		{
+		ourClass = Class.forName("com.bag.hindugodsymbology.GodDetails");
+
+		Intent i = new Intent(GodsListActivity.this, ourClass);
+		Bundle b = new Bundle();
+		b.putParcelable("BEAN", rowItems.get(position));
+		i.putExtras(b);
+		//i.setClass(this, GodDetails.class);
+		startActivity(i);
+		
+	} catch (ClassNotFoundException e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+	}
+		
+		
+		
+		
+		
+		
 	}
 
 	@Override
@@ -115,5 +140,7 @@ public class GodsListActivity extends Activity implements OnItemClickListener {
 		getMenuInflater().inflate(R.menu.main, menu);
 		return true;
 	}
+
+	
 
 }
