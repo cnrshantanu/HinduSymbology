@@ -33,9 +33,14 @@ public class MarkerActivity extends Activity implements android.view.View.OnClic
 	 public void onWindowFocusChanged(boolean hasFocus) {
 	  // TODO Auto-generated method stub
 	  super.onWindowFocusChanged(hasFocus);
+	  //currently I have not found the api where we get the callback after the view has been inflated
+	  //so incase u dont see the buttons press home and come back again
 	  configureButtons();
-	  //Here you can get the size!
+	
 	 }
+	
+	//so from your beans object I need the no of markers
+	//and the position x,y coordinates of all the markers
 	
 	private void configureButtons(){
 		
