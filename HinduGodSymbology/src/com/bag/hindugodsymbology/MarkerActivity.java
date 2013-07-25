@@ -70,16 +70,17 @@ public class MarkerActivity extends Activity {
 		});
 		
         but_summary.setOnClickListener(new View.OnClickListener() {
-			
+
 			@Override
 			public void onClick(View arg0) {
 				Class ourClass;
 				try
 				{
-					ourClass = Class.forName("com.bag.hindugodsymbology.SummaryActivity");
+					ourClass = Class.forName("com.bag.hindugodsymbology.HTMLContentActivity");
 
 					Intent i = new Intent(MarkerActivity.this, ourClass);
 					Bundle b = new Bundle();
+					i.putExtra("Type", "Summary");
 					b.putParcelable("BEAN", bean);
 					i.putExtras(b);
 					
@@ -91,19 +92,21 @@ public class MarkerActivity extends Activity {
 				}
 			}
 		});
-        
-        but_symbology.setOnClickListener(new View.OnClickListener() {
-			
+
+		but_symbology.setOnClickListener(new View.OnClickListener() {
+
 			@Override
 			public void onClick(View arg0) {
+				// TODO Auto-generated method stub
 				Class ourClass;
 				try
 				{
-					ourClass = Class.forName("com.bag.hindugodsymbology.SymbologyActivity");
+					ourClass = Class.forName("com.bag.hindugodsymbology.HTMLContentActivity");
 
 					Intent i = new Intent(MarkerActivity.this, ourClass);
 					Bundle b = new Bundle();
 					b.putParcelable("BEAN", bean);
+					i.putExtra("Type", "Symbology");
 					i.putExtras(b);
 					
 					startActivity(i);
@@ -114,9 +117,9 @@ public class MarkerActivity extends Activity {
 				}
 			}
 		});
-        
+
+		}
+
+
+
 	}
-
-	
-	
-}

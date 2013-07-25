@@ -44,6 +44,7 @@ public class CustomListViewAdapter extends ArrayAdapter<God_Bean> {
             holder = new ViewHolder();
             holder.God_Name = (TextView) convertView.findViewById(R.id.GodName);
             
+            
             holder.imageView = (ImageView) convertView.findViewById(R.id.icon);
             convertView.setTag(holder);
         } else

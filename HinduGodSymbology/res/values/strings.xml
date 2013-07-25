@@ -6,6 +6,57 @@
     <string name="hello_world">Hello world!</string>
     <string name="name">ListViewBaseAdapter</string>
     <string name="image">Thumbnail</string>
-
+<string name="category1">Primary Male</string>
+    <string name="category2">Primary Female</string>
+    <string name="category3">Sons of Shiva</string>
+     <string name="category4">Itihasa Purusha</string>
+    <string-array name="gods_array">
+        <item>BabyKrishna</item>
+        <item>Brahma</item>
+        <item>Durga</item>
+        <item>Ganesh</item>
+        <item>Hanuman</item>
+        <item>Kali</item>
+        <item>Karthikeya</item>
+        <item>Lakshmi</item>
+        <item>Narayana</item>
+        <item>Nataraja</item>
+        <item>RadhaKrishna</item>
+        <item>Rama</item>
+        <item>Saraswati</item>
+        <item>Shiva</item>
+        <item>Vishnu</item>
+        <item>Vishvarupa</item>
+             
+    </string-array>
+    
+    <string-array name="primary_male">
+       
+        <item>Narayana</item>
+        <item>Brahma</item>
+         <item>Vishnu</item>
+        <item>Shiva</item>
+        <item>Nataraja</item>
+    </string-array>
+    
+    <string-array name="primary_female">
+        <item>Lakshmi</item>
+        <item>Saraswati</item>
+        <item>Durga</item>
+        <item>Kali</item>
+    </string-array>
+    
+    <string-array name="shiva_sons">
+        <item>Ganesh</item>
+        <item>Karthikeya</item>
+    </string-array>
+    
+    <string-array name="itihasa_purusha">
+        <item>Baby Krishna</item>
+        <item>Radha Krishna</item>
+        <item>Rama</item>
+        <item>Hanuman</item>
+        <item>Vishvarupa</item>
+    </string-array>
     
 </resources>

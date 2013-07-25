@@ -22,16 +22,21 @@ public class GodDetails extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.god_details);
 
+		
+		
+		
 		Bundle b = this.getIntent().getExtras();
 		if(b!=null)
 			bean = b.getParcelable("BEAN");
 
+		
 		ImageView Main_Image = (ImageView) findViewById(R.id.imMainImage);
 		Button but_marker = (Button) findViewById(R.id.bMarker);
 		Button but_symbology = (Button) findViewById(R.id.bSymbology);
 		Button but_summary = (Button) findViewById(R.id.bSummary);
 
 
+		
 		AssetManager assetManager = getAssets();
 
 		InputStream istr;
@@ -53,7 +58,7 @@ public class GodDetails extends Activity {
 				Class ourClass;
 				try
 				{
-					ourClass = Class.forName("com.bag.hindugodsymbology.MarkerActivity");
+					ourClass = Class.forName("com.bag.hindugodsymbology.NewMarkerActivity");
 
 					Intent i = new Intent(GodDetails.this, ourClass);
 					Bundle b = new Bundle();
@@ -76,10 +81,11 @@ public class GodDetails extends Activity {
 				Class ourClass;
 				try
 				{
-					ourClass = Class.forName("com.bag.hindugodsymbology.SummaryActivity");
+					ourClass = Class.forName("com.bag.hindugodsymbology.HTMLContentActivity");
 
 					Intent i = new Intent(GodDetails.this, ourClass);
 					Bundle b = new Bundle();
+					i.putExtra("Type", "Summary");
 					b.putParcelable("BEAN", bean);
 					i.putExtras(b);
 					
@@ -100,11 +106,12 @@ public class GodDetails extends Activity {
 				Class ourClass;
 				try
 				{
-					ourClass = Class.forName("com.bag.hindugodsymbology.SymbologyActivity");
+					ourClass = Class.forName("com.bag.hindugodsymbology.HTMLContentActivity");
 
 					Intent i = new Intent(GodDetails.this, ourClass);
 					Bundle b = new Bundle();
 					b.putParcelable("BEAN", bean);
+					i.putExtra("Type", "Symbology");
 					i.putExtras(b);
 					
 					startActivity(i);
