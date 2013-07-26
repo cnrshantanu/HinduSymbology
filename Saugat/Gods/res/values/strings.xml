@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Gods</string>
+    <string name="action_settings">Settings</string>
+    <string name="hello_world">Hello world!</string>
+     <string name="tab_navigation">Tab Navigation</string>
+    <string name="tab_navigation_content">Tabs can be useful for switching between a limited number of items. You can also collapse the main body of the action bar on small devices so that only the tab bar is displayed. See the source for more information.</string>
+
+</resources>
