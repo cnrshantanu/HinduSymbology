@@ -97,118 +97,83 @@ public class FragmentClassifiedList extends SherlockFragment {
 
 	private void primaryMaleRegisterClickCallback() {
 		// TODO Auto-generated method stub
-//		ListView list = (ListView) findViewById(R.id.category1);
-//		list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-//
-//			@Override
-//			public void onItemClick(AdapterView<?> parent, View viewClicked, int position,
-//					long id) {
-//
-//				Class ourClass;
-//				try
-//				{
-//				ourClass = Class.forName("com.bag.hindugodsymbology.GodDetails");
-//
-//				Intent i = new Intent(GodsClassification.this, ourClass);
-//				Bundle b = new Bundle();
-//				b.putParcelable("BEAN", primaryMaleGods.get(position));
-//				i.putExtras(b);
-//				//i.setClass(this, GodDetails.class);
-//				startActivity(i);
-//				
-//			} catch (ClassNotFoundException e) {
-//				// TODO Auto-generated catch block
-//				e.printStackTrace();
-//			}
-//		}
-//		});
+		ListView list = (ListView) getActivity().findViewById(R.id.category1);
+		list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+
+			@Override
+			public void onItemClick(AdapterView<?> parent, View viewClicked, int position,
+					long id) {
+
+				Intent i = new Intent(getActivity(),TabGodDetails.class);
+				Bundle b = new Bundle();
+				b.putParcelable("BEAN", primaryMaleGods.get(position));
+				i.putExtras(b);
+				startActivity(i);
+				
+			
+		}
+		});
 	}
 
 	private void primaryFemaleRegisterClickCallback() {
 		// TODO Auto-generated method stub
-//		ListView list = (ListView) findViewById(R.id.category2);
-//		list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-//
-//			@Override
-//			public void onItemClick(AdapterView<?> parent, View viewClicked, int position,
-//					long id) {
-//
-//				Class ourClass;
-//				try
-//				{
-//				ourClass = Class.forName("com.bag.hindugodsymbology.GodDetails");
-//
-//				Intent i = new Intent(GodsClassification.this, ourClass);
-//				Bundle b = new Bundle();
-//				b.putParcelable("BEAN", primaryFemaleGods.get(position));
-//				i.putExtras(b);
-//				//i.setClass(this, GodDetails.class);
-//				startActivity(i);
-//				
-//			} catch (ClassNotFoundException e) {
-//				// TODO Auto-generated catch block
-//				e.printStackTrace();
-//			}
-//		}
-//		});
-	}
+		ListView list = (ListView) getActivity().findViewById(R.id.category2);
+		list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+
+			@Override
+			public void onItemClick(AdapterView<?> parent, View viewClicked, int position,
+					long id) {
+
+				Intent i = new Intent(getActivity(),TabGodDetails.class);
+				Bundle b = new Bundle();
+				b.putParcelable("BEAN", primaryFemaleGods.get(position));
+				i.putExtras(b);
+				startActivity(i);
+				
+			
+		}
+		});
+
+}
 
 	private void sonsOfShivaRegisterClickCallback() {
 		// TODO Auto-generated method stub
-//		ListView list = (ListView) findViewById(R.id.category3);
-//		list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-//
-//			@Override
-//			public void onItemClick(AdapterView<?> parent, View viewClicked, int position,
-//					long id) {
-//
-//				Class ourClass;
-//				try
-//				{
-//				ourClass = Class.forName("com.bag.hindugodsymbology.GodDetails");
-//
-//				Intent i = new Intent(GodsClassification.this, ourClass);
-//				Bundle b = new Bundle();
-//				b.putParcelable("BEAN", sonsOfShiva.get(position));
-//				i.putExtras(b);
-//				//i.setClass(this, GodDetails.class);
-//				startActivity(i);
-//				
-//			} catch (ClassNotFoundException e) {
-//				// TODO Auto-generated catch block
-//				e.printStackTrace();
-//			}
-//		}
-//		});
+		ListView list = (ListView) getActivity().findViewById(R.id.category3);
+		list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+
+			@Override
+			public void onItemClick(AdapterView<?> parent, View viewClicked, int position,
+					long id) {
+
+				Intent i = new Intent(getActivity(),TabGodDetails.class);
+				Bundle b = new Bundle();
+				b.putParcelable("BEAN", sonsOfShiva.get(position));
+				i.putExtras(b);
+				startActivity(i);
+				
+			
+		}
+		});
 	}
 
 
 	private void itihasaPurushaRegisterClickCallback() {
 		// TODO Auto-generated method stub
 		ListView list = (ListView) getActivity().findViewById(R.id.category4);
-//		list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-//
-//			@Override
-//			public void onItemClick(AdapterView<?> parent, View viewClicked, int position,
-//					long id) {
-//				Class ourClass;
-//				try
-//				{
-//				ourClass = Class.forName("com.bag.hindugodsymbology.GodDetails");
-//
-//				Intent i = new Intent(GodsClassification.this, ourClass);
-//				Bundle b = new Bundle();
-//				b.putParcelable("BEAN", itihasaPurusha.get(position));
-//				i.putExtras(b);
-//				//i.setClass(this, GodDetails.class);
-//				startActivity(i);
-//				
-//			} catch (ClassNotFoundException e) {
-//				// TODO Auto-generated catch block
-//				e.printStackTrace();
-//			}
-//		}
-//		});
+		list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+
+			@Override
+			public void onItemClick(AdapterView<?> parent, View viewClicked, int position,
+					long id) {
+
+				Intent i = new Intent(getActivity(),TabGodDetails.class);
+				Bundle b = new Bundle();
+				b.putParcelable("BEAN", itihasaPurusha.get(position));
+				i.putExtras(b);
+				startActivity(i);
+				
+			
+		}
+		});
 	}
-	
 }

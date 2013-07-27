@@ -13,6 +13,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Toast;
 
@@ -147,6 +148,12 @@ public class FragmentAlphabeticalList extends SherlockListFragment {
 		God_Bean godClicked = myGods.get(position);
 		String message = "You selected " + godClicked.getGod_Name();
 		Toast.makeText(getActivity(), message, Toast.LENGTH_LONG).show();
+	
+		Intent i = new Intent(getActivity(),TabGodDetails.class);
+		Bundle b = new Bundle();
+		b.putParcelable("BEAN", myGods.get(position));
+		i.putExtras(b);
+		startActivity(i);
 	}
 
 }

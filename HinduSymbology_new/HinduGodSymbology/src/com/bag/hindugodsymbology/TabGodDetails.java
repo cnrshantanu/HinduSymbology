@@ -29,11 +29,11 @@ public class TabGodDetails extends SherlockFragmentActivity {
 	        tab1.setTabListener(new MyTabListener<FragmentMarker>(this, "tab1",
 	                FragmentMarker.class));
 
-	        tab2.setTabListener(new MyTabListener<FragmentWebview>(this, "tab2",
-	                FragmentWebview.class));
+	        tab2.setTabListener(new MyTabListener<FragmentSymbology>(this, "tab2",
+	                FragmentSymbology.class));
 	        
-	        tab3.setTabListener(new MyTabListener<FragmentWebview>(this, "tab3",
-	                FragmentWebview.class));
+	        tab3.setTabListener(new MyTabListener<FragmentSummary>(this, "tab3",
+	                FragmentSummary.class));
 
 	        actionbar.addTab(tab1);
 	        actionbar.addTab(tab2);
