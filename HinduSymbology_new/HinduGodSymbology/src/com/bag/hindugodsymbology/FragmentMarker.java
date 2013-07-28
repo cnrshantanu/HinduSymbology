@@ -4,6 +4,9 @@ import java.io.IOException;
 import java.util.Iterator;
 import java.util.Map;
 
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.util.Log;
@@ -22,7 +25,9 @@ public class FragmentMarker extends SherlockFragment  implements android.view.Vi
     
     private FrameLayout m_GodPicture;
     private God_Bean bean;
+    private float m_width = 0,m_height = 0;
     
+        
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
             Bundle savedInstanceState) {
@@ -41,14 +46,20 @@ public class FragmentMarker extends SherlockFragment  implements android.view.Vi
 			   bean = b.getParcelable("BEAN");
 			
 		m_GodPicture = (FrameLayout) getActivity().findViewById(R.id.goddetails);
-		Drawable d = null;
+		Drawable l_drawable = null;
 		try {
-			 d = Drawable.createFromStream(getActivity().getAssets().open(bean.getMain_Image()), null);//Setting the image here
+			  
+			 Bitmap l_bitmap = BitmapFactory.decodeStream(getActivity().getAssets().open(bean.getMain_Image()));
+			 //d = Drawable.createFromStream(getActivity().getAssets().open(bean.getMain_Image()), null);//Setting the image here
+			 l_drawable = new BitmapDrawable(getResources(),l_bitmap);
+			 m_width 	= l_bitmap.getWidth();
+			 m_height	= l_bitmap.getHeight();
+			 Log.d("DEBUG","goat height "+m_height+"Cow width "+ m_width);
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		m_GodPicture.setBackgroundDrawable(d);
+		m_GodPicture.setBackgroundDrawable(l_drawable);
 		onLayoutInflate();
 	}
 	
@@ -88,8 +99,8 @@ public class FragmentMarker extends SherlockFragment  implements android.view.Vi
 			Map.Entry mEntry = (Map.Entry) iter.next();
 			
 			String[] coord = mEntry.getKey().toString().split(",");// this is to divide the x and y coordinate separated by ','
-			float x = Integer.parseInt(coord[0])/524f;//1st coordinate is the x coord
-			float y = Integer.parseInt(coord[1])/688f;//2nd coordinate is the y coord
+			float x = Integer.parseInt(coord[0])/m_width;//1st coordinate is the x coord
+			float y = Integer.parseInt(coord[1])/m_height;//2nd coordinate is the y coord
 			params = new FrameLayout.LayoutParams(
 
 					FrameLayout.LayoutParams.WRAP_CONTENT,
@@ -106,7 +117,7 @@ public class FragmentMarker extends SherlockFragment  implements android.view.Vi
 			b.setOnClickListener(this);
 			m_GodPicture.addView(b, params);
 			i++;
-			Log.d("Marker Acti","x" + x + "y" + y + "left margin  "+params.leftMargin + "width" + m_GodPicture.getWidth() + "top margin "+params.topMargin + "height "+ m_GodPicture.getHeight());
+			Log.d("Marker Acti","width image" + m_width + "height of image" + m_height+ "x" + x + "y" + y + "left margin  "+params.leftMargin + "width" + m_GodPicture.getWidth() + "top margin "+params.topMargin + "height "+ m_GodPicture.getHeight());
 		}
 
 	}
