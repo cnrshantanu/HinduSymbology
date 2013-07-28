@@ -201,6 +201,7 @@ public class NewMarkerActivity extends Activity implements android.view.View.OnC
 			
 		}*/
 	}
+
 	@Override
 	public void onClick(View v) {
 		// TODO Auto-generated method stub
