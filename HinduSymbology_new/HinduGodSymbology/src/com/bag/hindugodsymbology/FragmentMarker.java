@@ -83,13 +83,13 @@ public class FragmentMarker extends SherlockFragment  implements android.view.Vi
 		Iterator iter = bean.getMarkers().entrySet().iterator();//bean.getMarkers will return the hash map of markers key contains
 		
 		int i = 0;
-		while (i<10)//iterating through the hashmap 
+		while (iter.hasNext())//iterating through the hashmap 
 		{
-			//Map.Entry mEntry = (Map.Entry) iter.next();
+			Map.Entry mEntry = (Map.Entry) iter.next();
 			
-			//String[] coord = mEntry.getKey().toString().split(",");// this is to divide the x and y coordinate separated by ','
-			//int x = Integer.parseInt(coord[0]);//1st coordinate is the x coord
-			//int y = Integer.parseInt(coord[1]);//2nd coordinate is the y coord
+			String[] coord = mEntry.getKey().toString().split(",");// this is to divide the x and y coordinate separated by ','
+			float x = Integer.parseInt(coord[0])/524f;//1st coordinate is the x coord
+			float y = Integer.parseInt(coord[1])/688f;//2nd coordinate is the y coord
 			params = new FrameLayout.LayoutParams(
 
 					FrameLayout.LayoutParams.WRAP_CONTENT,
@@ -97,8 +97,8 @@ public class FragmentMarker extends SherlockFragment  implements android.view.Vi
 	        );
 			b = new Button(getActivity());
 			params.width  = params.height = 50;
-			params.leftMargin = m_GodPicture.getLeft() + (int)((float)Math.random() * m_GodPicture.getWidth()) - params.width/2;//i've put x in place of imageleft
-			params.topMargin  = m_GodPicture.getTop()  + (int)((float)Math.random() * m_GodPicture.getHeight()) - params.height/2;//i've put y in place of image top
+			params.leftMargin = m_GodPicture.getLeft() + (int)((float)x * m_GodPicture.getWidth()) - params.width/2;//i've put x in place of imageleft
+			params.topMargin  = m_GodPicture.getTop()  + (int)((float)y * m_GodPicture.getHeight()) - params.height/2;//i've put y in place of image top
 			b.setLayoutParams(params);
 			//b.setContentDescription(mEntry.getValue().toString());// putting the significance which can be toasted
 			b.setId(i);
@@ -106,7 +106,7 @@ public class FragmentMarker extends SherlockFragment  implements android.view.Vi
 			b.setOnClickListener(this);
 			m_GodPicture.addView(b, params);
 			i++;
-			Log.d("Marker Acti","left margin  "+params.leftMargin + "width" + m_GodPicture.getWidth() + "top margin "+params.topMargin + "height "+ m_GodPicture.getHeight());
+			Log.d("Marker Acti","x" + x + "y" + y + "left margin  "+params.leftMargin + "width" + m_GodPicture.getWidth() + "top margin "+params.topMargin + "height "+ m_GodPicture.getHeight());
 		}
 
 	}

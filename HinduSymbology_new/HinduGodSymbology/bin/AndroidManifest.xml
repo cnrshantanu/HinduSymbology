@@ -21,7 +21,7 @@
               
         </activity>
         
-        <activity android:label="tab_godList" android:name=".TabGodNames">
+        <activity android:label="tab_godList" android:name=".TabGodNames" android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
