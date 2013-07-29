@@ -4,6 +4,8 @@ import java.io.IOException;
 import java.util.Iterator;
 import java.util.Map;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.drawable.BitmapDrawable;
@@ -111,7 +113,7 @@ public class FragmentMarker extends SherlockFragment  implements android.view.Vi
 			params.leftMargin = m_GodPicture.getLeft() + (int)((float)x * m_GodPicture.getWidth()) - params.width/2;//i've put x in place of imageleft
 			params.topMargin  = m_GodPicture.getTop()  + (int)((float)y * m_GodPicture.getHeight()) - params.height/2;//i've put y in place of image top
 			b.setLayoutParams(params);
-			//b.setContentDescription(mEntry.getValue().toString());// putting the significance which can be toasted
+			b.setContentDescription(mEntry.getValue().toString());// putting the significance which can be toasted
 			b.setId(i);
 			b.setBackgroundDrawable(getResources().getDrawable(R.drawable.marker));
 			b.setOnClickListener(this);
@@ -125,10 +127,24 @@ public class FragmentMarker extends SherlockFragment  implements android.view.Vi
 	@Override
 	public void onClick(View v) {
 		// TODO Auto-generated method stub
-		String message = "You selected :" + v.getId();
-		Toast toast = Toast.makeText(getActivity(),message,Toast.LENGTH_SHORT);//toasting the significance
-		toast.setGravity(Gravity.BOTTOM | Gravity.CENTER_HORIZONTAL, 0, 0);
-		toast.show(); 
+		
+		String message = v.getContentDescription().toString();
+		AlertDialog.Builder alert = new AlertDialog.Builder(getActivity());
+        //alert.setTitle("Registration"); //Set Alert dialog title here
+        alert.setMessage(message); //Message here
+
+        alert.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+        	public void onClick(DialogInterface dialog, int whichButton) {
+        		
+        	}
+        });
+        
+        AlertDialog alertDialog = alert.create();
+        alertDialog.show();
+		//String message = "You selected :" + v.getId();
+		//Toast toast = Toast.makeText(getActivity(),message,Toast.LENGTH_SHORT);//toasting the significance
+		//toast.setGravity(Gravity.BOTTOM | Gravity.CENTER_HORIZONTAL, 0, 0);
+		//toast.show(); 
 		
 	}
 

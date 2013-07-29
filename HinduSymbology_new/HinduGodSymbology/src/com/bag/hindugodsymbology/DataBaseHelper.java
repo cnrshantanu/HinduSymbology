@@ -17,11 +17,11 @@ import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
 
 public class DataBaseHelper extends SQLiteOpenHelper {
-
+	// CC's copy
 	// The Android's default system path of your application database.
 	private static String DB_PATH = "/data/data/com.bag.hindugodsymbology/databases/";
 
-	private static String DB_NAME = "New_God.db";
+	private static String DB_NAME = "temp3.db";
 
 	private SQLiteDatabase myDataBase;
 
@@ -185,7 +185,7 @@ public class DataBaseHelper extends SQLiteOpenHelper {
 				// Adding Translate to list
 				God_Bean dao = new God_Bean();
 				HashMap<String, String> MarkerSet = new HashMap<String, String>();
-				for (int i = 0; i < 14; i += 2) 
+				for (int i = 0; i < 46; i += 2) 
 				{
 					//Log.d("This One" + c, cursor.getColumnName(i) + ","
 					//		+ cursor.getString(i));
@@ -206,13 +206,13 @@ public class DataBaseHelper extends SQLiteOpenHelper {
 				}
 
 				dao.setMarkers(MarkerSet);
-				dao.setMarker_Image(cursor.getString(14));
-				dao.setMain_Image(cursor.getString(15));
-				dao.setSummary(cursor.getString(16));
-				dao.setSymbology(cursor.getString(17));
-				dao.set_id(cursor.getString(18));
-				dao.setGod_Name(cursor.getString(19));
-				dao.setClassification(cursor.getString(20));
+				dao.setMarker_Image(cursor.getString(46));
+				dao.setMain_Image(cursor.getString(47));
+				dao.setSummary(cursor.getString(48));
+				dao.setSymbology(cursor.getString(49));
+				dao.set_id(cursor.getString(50));
+				dao.setGod_Name(cursor.getString(51));
+				dao.setClassification(cursor.getString(52));
 
 				String folderName = dao.getGod_Name().replace(' ', '_');
 
