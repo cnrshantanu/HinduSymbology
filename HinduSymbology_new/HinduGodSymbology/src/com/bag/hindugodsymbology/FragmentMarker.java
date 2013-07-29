@@ -109,7 +109,14 @@ public class FragmentMarker extends SherlockFragment  implements android.view.Vi
 					FrameLayout.LayoutParams.WRAP_CONTENT
 	        );
 			b = new Button(getActivity());
-			params.width  = params.height = 50;
+			if(m_GodPicture.getWidth()<m_GodPicture.getHeight()){
+				
+				params.width  = params.height = (int)(0.0695f * (float)m_GodPicture.getWidth());
+			}
+			else{
+				
+				params.width  = params.height = (int)(0.0695f * (float)m_GodPicture.getHeight());
+			}
 			params.leftMargin = m_GodPicture.getLeft() + (int)((float)x * m_GodPicture.getWidth()) - params.width/2;//i've put x in place of imageleft
 			params.topMargin  = m_GodPicture.getTop()  + (int)((float)y * m_GodPicture.getHeight()) - params.height/2;//i've put y in place of image top
 			b.setLayoutParams(params);

@@ -18,6 +18,9 @@ public class TabGodDetails extends SherlockFragmentActivity {
 	    
 		  super.onCreate(savedInstanceState);
 		  setContentView(R.layout.main);
+		  	
+		  	getSupportActionBar().setDisplayShowHomeEnabled(false);
+		  	getSupportActionBar().setDisplayShowTitleEnabled(false);
 
 	        ActionBar actionbar = getSupportActionBar();
 	        actionbar.setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);

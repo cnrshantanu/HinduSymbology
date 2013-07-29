@@ -10,6 +10,7 @@
         android:layout_alignBottom="@+id/laxmi"
         android:layout_marginBottom="29dp"
         android:layout_marginLeft="20dp"
+        android:textColor="@color/abs__primary_text_disable_only_holo_light"
         android:layout_toRightOf="@+id/laxmi"
         android:text="LaxmiMata" />
 

@@ -6,10 +6,15 @@
     <string name="hello_world">Hello world!</string>
     <string name="name">ListViewBaseAdapter</string>
     <string name="image">Thumbnail</string>
-<string name="category1">Primary Male</string>
+	<string name="category1">Primary Male</string>
     <string name="category2">Primary Female</string>
     <string name="category3">Sons of Shiva</string>
-     <string name="category4">Itihasa Purusha</string>
+    <string name="category4">Itihasa Purusha</string>
+    <string name="Launcher_button1">God Symbology</string>
+    <string name="Launcher_button2">How to Use</string>
+    <string name="Launcher_button3">About the App</string>
+    <string name="Launcher_button4">Credentials</string>
+    <string name="Launcher_button5">Contact</string>
     <string-array name="gods_array">
         <item>BabyKrishna</item>
         <item>Brahma</item>

@@ -147,8 +147,6 @@ public class FragmentAlphabeticalList extends SherlockListFragment {
 		
 		God_Bean godClicked = myGods.get(position);
 		String message = "You selected " + godClicked.getGod_Name();
-		Toast.makeText(getActivity(), message, Toast.LENGTH_LONG).show();
-	
 		Intent i = new Intent(getActivity(),TabGodDetails.class);
 		Bundle b = new Bundle();
 		b.putParcelable("BEAN", myGods.get(position));

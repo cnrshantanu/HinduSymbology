@@ -26,7 +26,7 @@ public class FragmentSymbology extends SherlockFragment {
   		if(b!=null)
   		   bean = b.getParcelable("BEAN");
   		WebView wv = (WebView) getActivity().findViewById(R.id.wvHTMLContent);
-  		wv.getSettings().setJavaScriptEnabled(true);
+  		//wv.getSettings().setJavaScriptEnabled(true);
   		wv.loadUrl("file:///android_asset/"+bean.getSymbology());
        }
 
