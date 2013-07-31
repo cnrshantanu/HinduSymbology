@@ -8,9 +8,10 @@
     android:paddingRight="16dp" >
     <Button
         android:id="@+id/button1"
+        android:layout_marginTop="220dp"
         android:layout_marginBottom="14dp"
         android:layout_width="112dp"
-        android:layout_height="35dp"
+        android:layout_height="wrap_content"
         android:background="@drawable/button_back"
         android:layout_gravity="center_horizontal"
         android:text="@string/Launcher_button1" />
@@ -28,7 +29,7 @@
         android:id="@+id/button3"
         android:layout_marginBottom="14dp"
         android:layout_width="112dp"
-        android:layout_height="35dp"
+        android:layout_height="wrap_content"
 	   	android:layout_gravity="center_horizontal"
         android:text="@string/Launcher_button3"
         android:background="@drawable/button_back_select"/>
@@ -44,11 +45,10 @@
 
     <Button
         android:id="@+id/button5"
-        android:layout_marginBottom="140dp"
         android:layout_width="112dp"
         android:layout_height="35dp"
+        android:layout_marginBottom="140dp"
         android:background="@drawable/button_back"
-        android:layout_gravity="center_horizontal"
         android:text="@string/Launcher_button5" />
 
 </LinearLayout>

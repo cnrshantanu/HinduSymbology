@@ -1,6 +1,7 @@
 package com.bag.hindugodsymbology;
 
 import android.os.Bundle;
+import android.app.ActionBar.LayoutParams;
 import android.app.Activity;
 import android.content.DialogInterface;
 import android.content.DialogInterface.OnClickListener;

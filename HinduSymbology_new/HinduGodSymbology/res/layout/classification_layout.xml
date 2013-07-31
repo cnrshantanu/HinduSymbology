@@ -16,7 +16,7 @@
 
             <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:orientation="vertical"
                 android:paddingBottom="@dimen/activity_vertical_margin"
                 android:paddingLeft="@dimen/activity_horizontal_margin"
@@ -25,9 +25,12 @@
 
                 <TextView
                     android:id="@+id/class1"
-                    android:layout_width="wrap_content"
+                    android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="5dp"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:textStyle="bold"
                     android:text="@string/category1" />
 
                 <ListView
@@ -39,9 +42,12 @@
 
                 <TextView
                     android:id="@+id/class2"
-                    android:layout_width="wrap_content"
+                    android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/category1"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:textStyle="bold"
                     android:layout_marginBottom="5dp"
                     android:text="@string/category2" />
 
@@ -54,9 +60,12 @@
 
                 <TextView
                     android:id="@+id/class3"
-                    android:layout_width="wrap_content"
+                    android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/category2"
+                    android:layout_gravity="center"
+                    android:gravity ="center"
+                    android:textStyle="bold"
                     android:layout_marginBottom="5dp"
                     android:text="@string/category3" />
 
@@ -69,9 +78,12 @@
 
                 <TextView
                     android:id="@+id/class4"
-                    android:layout_width="wrap_content"
+                    android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/category3"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:textStyle="bold"
                     android:layout_marginBottom="5dp"
                     android:text="@string/category4" />
 
