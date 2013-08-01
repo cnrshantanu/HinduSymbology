@@ -1,4 +1,5 @@
-	<FrameLayout  
+	
+    <FrameLayout  
 	    xmlns:android="http://schemas.android.com/apk/res/android"  
 	    android:id="@+id/goddetails"
 	    android:layout_width="fill_parent"  
@@ -8,5 +9,18 @@
 	    android:background="@drawable/__ganesh"
 	    android:paddingLeft="0dp"
 	    android:paddingRight="0dp" >
+	 	<RelativeLayout 
+        android:id="@+id/InnerRelativeLayout"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true" >
+        <Button
+        android:id="@+id/button_show"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_gravity="center_horizontal"
+       />
+        </RelativeLayout>
 	</FrameLayout>
 	

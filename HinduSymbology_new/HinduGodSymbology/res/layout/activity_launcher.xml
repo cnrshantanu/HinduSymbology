@@ -11,7 +11,7 @@
         android:layout_marginTop="220dp"
         android:layout_marginBottom="14dp"
         android:layout_width="112dp"
-        android:layout_height="wrap_content"
+        android:layout_height="45dp"
         android:background="@drawable/button_back"
         android:layout_gravity="center_horizontal"
         android:text="@string/Launcher_button1" />
@@ -29,10 +29,10 @@
         android:id="@+id/button3"
         android:layout_marginBottom="14dp"
         android:layout_width="112dp"
-        android:layout_height="wrap_content"
+        android:layout_height="45dp"
 	   	android:layout_gravity="center_horizontal"
         android:text="@string/Launcher_button3"
-        android:background="@drawable/button_back_select"/>
+        android:background="@drawable/button_back"/>
     
     <Button
         android:id="@+id/button4"
