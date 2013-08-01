@@ -20,6 +20,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_gravity="center_horizontal"
+        android:color="#66FF00FF"
        />
         </RelativeLayout>
 	</FrameLayout>

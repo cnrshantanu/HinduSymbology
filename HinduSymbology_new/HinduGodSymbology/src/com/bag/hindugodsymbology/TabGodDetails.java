@@ -8,6 +8,8 @@ import com.actionbarsherlock.app.ActionBar;
 import com.actionbarsherlock.app.ActionBar.Tab;
 import com.actionbarsherlock.app.SherlockActivity;
 import com.actionbarsherlock.app.SherlockFragmentActivity;
+import com.actionbarsherlock.view.Menu;
+import com.actionbarsherlock.view.MenuItem;
 
 public class TabGodDetails extends SherlockFragmentActivity {
 	  // store the active tab here
@@ -48,7 +50,15 @@ public class TabGodDetails extends SherlockFragmentActivity {
 	                  savedInstanceState.getInt(ACTIVE_TAB));
 	    }
 	  }
-
+	  
+	  @Override
+		 public boolean  onCreateOptionsMenu(Menu menu) {
+			// super.onCreateOptionsMenu(menu,inflater);
+		  
+		  
+			return true;
+			 
+		 }
 	  @Override
 	  protected void onSaveInstanceState(Bundle outState) {
 	    // save active tab

@@ -17,6 +17,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
+import android.view.MenuInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.ViewTreeObserver;
@@ -27,6 +28,8 @@ import android.widget.FrameLayout;
 import android.widget.Toast;
 
 import com.actionbarsherlock.app.SherlockFragment;
+import com.actionbarsherlock.view.Menu;
+import com.actionbarsherlock.view.MenuItem;
 
 public class FragmentMarker extends SherlockFragment  implements android.view.View.OnClickListener{
     
@@ -68,11 +71,11 @@ public class FragmentMarker extends SherlockFragment  implements android.view.Vi
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-		}
+		} 
 		m_GodPicture.setBackgroundDrawable(l_drawable);
 		onLayoutInflate();
+		
 	}
-	
 	private void onLayoutInflate(){
 		  if(m_GodPicture.getHeight() ==0 || m_GodPicture.getWidth() ==0)
 		  {
@@ -100,9 +103,9 @@ public class FragmentMarker extends SherlockFragment  implements android.view.Vi
 	private void configureButtons(){
 		
 		m_button = (Button) getActivity().findViewById(R.id.button_show);
-    	m_button.setText("Show Marker");
+    	m_button.setText("Hide Marker");
 		m_button.setOnClickListener(this);
-		
+		m_visible = 1;
 		
 		
 		
@@ -137,7 +140,17 @@ public class FragmentMarker extends SherlockFragment  implements android.view.Vi
 			b.setLayoutParams(params);
 			b.setContentDescription(mEntry.getValue().toString());// putting the significance which can be toasted
 			b.setId(i);
-			b.setVisibility(View.INVISIBLE);
+			
+			if(m_visible == -1)
+			{
+				m_button.setText("Show Marker");
+				b.setVisibility(View.INVISIBLE);
+			}
+			else{
+				m_button.setText("Hide Marker");
+				b.setVisibility(View.VISIBLE);
+			}
+			
 			b.setBackgroundDrawable(getResources().getDrawable(R.drawable.marker_animation));
 			animColorChange = (AnimationDrawable) b.getBackground();
 			animColorChange.start();
@@ -155,6 +168,7 @@ public class FragmentMarker extends SherlockFragment  implements android.view.Vi
 		FrameLayout.LayoutParams params;
 		Iterator iter = bean.getMarkers().entrySet().iterator();//bean.getMarkers will return the hash map of markers key contains
 		
+		m_button.setAlpha(1);
 		int i = 0;
 		while (iter.hasNext())//iterating through the hashmap 
 		{
