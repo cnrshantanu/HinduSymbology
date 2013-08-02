@@ -27,6 +27,7 @@ public class FragmentAlphabeticalList extends SherlockListFragment {
 	 private List<God_Bean> myGods = new ArrayList<God_Bean>();	
 	 private ArrayList<God_Bean> rowItems;
 	 ArrayList<God_Bean> BeanItems;
+	 private Boolean isInit = false;
 	 	  
 	@Override
 	public void onDestroyView() {
@@ -35,11 +36,37 @@ public class FragmentAlphabeticalList extends SherlockListFragment {
 		ArrayAdapter<God_Bean> adapter = new GodsListAdapter(getActivity().getApplicationContext(),R.layout.gods_view,myGods);
 		adapter.clear();
 	}
+	
+	@Override
+	public void onResume() {
+		// TODO Auto-generated method stub
+		super.onResume();
+		if(!isInit)
+		doDBoperation();
+		isInit = true;
+	}
 
+	@Override
+	public void onPause() {
+		// TODO Auto-generated method stub
+		super.onPause();
+		ArrayAdapter<God_Bean> adapter = new GodsListAdapter(getActivity().getApplicationContext(),R.layout.gods_view,myGods);
+		adapter.clear();
+		isInit = false;
+	}
+	
 	@Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
             Bundle savedInstanceState) {
         // Inflate the layout for this fragment
+		if(!isInit)
+			doDBoperation();
+		isInit = true;
+		return super.onCreateView(inflater, container, savedInstanceState);
+        
+    }
+	private void doDBoperation(){
+		
 		Bundle b = null;
 		try {
 			b = getActivity().getIntent().getExtras();
@@ -64,9 +91,8 @@ public class FragmentAlphabeticalList extends SherlockListFragment {
 			populateListView();
 		}
 
-		return super.onCreateView(inflater, container, savedInstanceState);
-        
-    }
+		
+	}
 	private class DBOperation extends AsyncTask<String, Void, String> {
 
 		@Override

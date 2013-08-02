@@ -1,6 +1,7 @@
 package com.rethink.hindugodsymbology;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.Map;
 
@@ -29,14 +30,14 @@ public class FragmentMarker extends SherlockFragment  implements android.view.Vi
     private AnimationDrawable animColorChange;
     private Button m_button;
     private int m_visible = -1;
+    private Boolean isInit = false;
+    private ArrayList<Button> button_list = new ArrayList<Button>();
        
         
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
             Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-    	FrameLayout layout = (FrameLayout)getActivity().findViewById(R.id.goddetails);
-    	
     	return inflater.inflate(R.layout.activity_goddetails_marker, container, false);
     }
     
@@ -64,8 +65,17 @@ public class FragmentMarker extends SherlockFragment  implements android.view.Vi
 		} 
 		m_GodPicture.setBackgroundDrawable(l_drawable);
 		onLayoutInflate();
+		isInit = true;
 		
 	}
+	
+	@Override
+	public void onDestroyView() {
+		// TODO Auto-generated method stub
+		super.onDestroyView();
+		button_list.clear();
+	}
+	
 	private void onLayoutInflate(){
 		  if(m_GodPicture.getHeight() ==0 || m_GodPicture.getWidth() ==0)
 		  {
@@ -147,6 +157,7 @@ public class FragmentMarker extends SherlockFragment  implements android.view.Vi
 			b.setOnClickListener(this);
 			m_GodPicture.addView(b, params);
 			i++;
+			button_list.add(b);
 			Log.d("Marker Acti","width image" + m_width + "height of image" + m_height+ "x" + x + "y" + y + "left margin  "+params.leftMargin + "width" + m_GodPicture.getWidth() + "top margin "+params.topMargin + "height "+ m_GodPicture.getHeight());
 		}
 
@@ -158,27 +169,42 @@ public class FragmentMarker extends SherlockFragment  implements android.view.Vi
 		FrameLayout.LayoutParams params;
 		Iterator iter = bean.getMarkers().entrySet().iterator();//bean.getMarkers will return the hash map of markers key contains
 		
-		int i = 0;
-		while (iter.hasNext())//iterating through the hashmap 
+		Iterator iter1 = button_list.iterator();
+		
+		while(iter1.hasNext())
 		{
-			Map.Entry mEntry = (Map.Entry) iter.next();
-			
-			
-			b = (Button) getActivity().findViewById(i);
+			Button b1 = (Button) iter1.next();
 			if(m_visible == -1)
 			{
 				m_button.setText("Show Marker");
-				b.setVisibility(View.INVISIBLE);
+				b1.setVisibility(View.INVISIBLE);
 			}
 			else{
 				m_button.setText("Hide Marker");
-				b.setVisibility(View.VISIBLE);
+				b1.setVisibility(View.VISIBLE);
 			}
-			
-			i++;
-			
 		}
-
+//		int i = 0;
+//		while (iter.hasNext())//iterating through the hashmap 
+//		{
+//			Map.Entry mEntry = (Map.Entry) iter.next();
+//			
+//			
+//			b = (Button) getActivity().findViewById(i);
+//			if(m_visible == -1)
+//			{
+//				m_button.setText("Show Marker");
+//				b.setVisibility(View.INVISIBLE);
+//			}
+//			else{
+//				m_button.setText("Hide Marker");
+//				b.setVisibility(View.VISIBLE);
+//			}
+//			
+//			i++;
+//			
+//		}
+//
 	}
 	
 	@Override

@@ -46,6 +46,15 @@ public class FragmentClassifiedList extends SherlockFragment {
 		return inflater.inflate(R.layout.classification_layout, container,
 				false);
 	}
+	
+	
+	@Override
+	public void onPause() {
+		// TODO Auto-generated method stub
+		super.onPause();
+		clearAdapters();
+	}
+
 
 	@Override
 	public void onDestroyView() {
